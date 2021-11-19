@@ -23,13 +23,25 @@
  * 
 */
 
+const navBarList = document.querySelector('#navbar__list');
+const sections = document.getElementsByTagName('section');
+
+for(section of sections) {
+    const li = document.createElement('li');
+    navBarList.appendChild(li);
+}
+
+for(section of sections) {
+    const sectionID = document.getElementById('section')
+    const sectionValue = sectionID.getAttribute(id);
+
+}
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
-
 
 
 /**
