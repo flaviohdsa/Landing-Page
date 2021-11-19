@@ -25,17 +25,14 @@
 
 const navBarList = document.querySelector('#navbar__list');
 const sections = document.getElementsByTagName('section');
+const sectionName = document.getElementsByClassName('data-nav');
 
 for(section of sections) {
     const li = document.createElement('li');
+    li.innerHTML = 'Link';
     navBarList.appendChild(li);
 }
 
-for(section of sections) {
-    const sectionID = document.getElementById('section')
-    const sectionValue = sectionID.getAttribute(id);
-
-}
 
 /**
  * End Global Variables
