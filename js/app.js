@@ -24,14 +24,18 @@
 */
 
 const navBarList = document.querySelector('#navbar__list');
-const sections = document.getElementsByTagName('section');
-const sectionName = document.getElementsByClassName('data-nav');
+const sections = document.querySelectorAll('section');
+const sectionName = document.querySelectorAll('data-nav');
 
-for(section of sections) {
-    const li = document.createElement('li');
-    li.innerHTML = 'Link';
-    navBarList.appendChild(li);
-}
+for (let i = 0; i < sections.length; i++) {
+
+    let navElement = document.createElement("li");
+    
+    navElement.innerHTML = "<a class = 'menu__link' href = ''>" + sections[i].getAttribute("data-nav") + "</a>";
+    
+    navBarList.appendChild(navElement);
+    
+    };
 
 
 /**
