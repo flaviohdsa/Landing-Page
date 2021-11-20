@@ -25,17 +25,12 @@
 
 const navBarList = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
-const sectionName = document.querySelectorAll('data-nav');
 
-for (let i = 0; i < sections.length; i++) {
-
+for(section of sections) {
     let navElement = document.createElement("li");
-    
-    navElement.innerHTML = "<a class = 'menu__link' href = ''>" + sections[i].getAttribute("data-nav") + "</a>";
-    
+    navElement.innerHTML = "<a class = 'menu__link' href = ''>" + section.getAttribute("data-nav") + "</a>";
     navBarList.appendChild(navElement);
-    
-    };
+};
 
 
 /**
