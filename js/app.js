@@ -23,16 +23,17 @@
  * 
 */
 
+//Navigation
+
 const navBarList = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 
 for(section of sections) {
     let navElement = document.createElement("li");
-    navElement.innerHTML = "<a class = 'menu__link' href = ''>" + section.getAttribute("data-nav") + "</a>";
+    navElement.innerHTML = `<a class = 'menu__link' href ='#${section.getAttribute("id")}'>${section.getAttribute("data-nav")}</a>`;
     navBarList.appendChild(navElement);
 };
-
-
+ 
 /**
  * End Global Variables
  * Start Helper Functions
@@ -45,6 +46,43 @@ for(section of sections) {
  * Begin Main Functions
  * 
 */
+
+function addActive() {
+    for (section of sections){
+        section.classList.add("your-active-class");
+  }
+}
+
+function removeActive() {
+    for (section of sections){
+        section.classList.remove("your-active-class");
+    }
+}
+
+function isInViewport(sections) {
+  const rect = sections.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function viewportClass() {
+  for (section of sections) {
+    if (isInViewport == true) {
+      addActive();
+    } else {
+      removeActive();
+    }
+  }
+}
+
+window.addEventListener("scroll", viewportClass());
+
+
+
 
 // build the nav
 
