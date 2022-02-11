@@ -43,7 +43,7 @@ for(section of sections) {
 
 navBarList.addEventListener('click', function (e) {
     e.preventDefault();
-
+    //The idea of using target was taken from the Jonas Schmedtmann Udemy Course 
     if (e.target.classList.contains('menu__link')) {
         const id = e.target.getAttribute('href');
         document.querySelector(id).scrollIntoView({ behavior: 'smooth'});
@@ -55,34 +55,13 @@ navBarList.addEventListener('click', function (e) {
 document.addEventListener("scroll", function() {
     for(section of sections) {
         if (isInViewport(section)) {
-            const id = section.getAttribute("id");   
-            document.querySelector(`.${id}`).classList.add("active");
+            const selectClass = section.getAttribute("id");   
+            document.querySelector(`.${selectClass}`).classList.add("active");
             section.classList.add('your-active-class');
         } else {
-                const id = section.getAttribute("id");  
-                document.querySelector(`.${id}`).classList.remove("active");
+                const selectClass = section.getAttribute("id");  
+                document.querySelector(`.${selectClass}`).classList.remove("active");
               section.classList.remove("your-active-class");
             }
     }
 })
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
