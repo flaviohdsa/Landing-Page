@@ -90,9 +90,12 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+.active {
+    background: rgb(12, 219, 116);
 }
 
 /* Header Styles */
