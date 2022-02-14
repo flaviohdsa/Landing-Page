@@ -13,13 +13,14 @@
  * 
 */
 
-// Global Variables
+
+//Global Variables
 
 const navBarList = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 
 
-// Global Functions
+// Function to determine if a specific element is in viewport
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -31,7 +32,7 @@ function isInViewport(element) {
     );
 }
 
-// Add navigation items 
+// Create navigation menu items dinamically based on the sections
 
 for(section of sections) {
     let navElement = document.createElement("li");
@@ -39,18 +40,17 @@ for(section of sections) {
     navBarList.appendChild(navElement);
 };
 
-// Navigation Scroll
+// Adding smooth scrolling behaviour for the navigation menu links
 
 navBarList.addEventListener('click', function (e) {
-    e.preventDefault();
-    //The idea of using target was taken from the Jonas Schmedtmann Udemy Course 
+    e.preventDefault(); 
     if (e.target.classList.contains('menu__link')) {
         const id = e.target.getAttribute('href');
         document.querySelector(id).scrollIntoView({ behavior: 'smooth'});
     }
 });
 
-// Add sections as active//
+// Adding 'Active' states while scrolling through each section and its relative menu link
 
 document.addEventListener("scroll", function() {
     for(section of sections) {
